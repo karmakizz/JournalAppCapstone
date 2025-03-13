@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import journalRoutes from './routes/journalRoutes.js'; // Import routes
-
+import userRoutes from './routes/userRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -15,6 +15,7 @@ app.use(express.json());  // Parse incoming JSON
 
 // Using journal routes
 app.use('/api', journalRoutes);
+app.use('/api', userRoutes);  // Register user routes
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
