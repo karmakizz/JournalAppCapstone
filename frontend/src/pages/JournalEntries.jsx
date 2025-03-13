@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import CreateJournal from './CreateJournalEntry';  // Import the new form component
+import CreateJournal from '../components/CreateJournalEntry';  // Import the new form component
 
 function JournalEntries() {
   const [journals, setJournals] = useState([]);
