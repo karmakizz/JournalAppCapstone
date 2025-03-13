@@ -3,6 +3,8 @@ import Home from "./pages/Home.jsx";
 import JournalEntries from "./pages/JournalEntries.jsx";
 import CreateJournalEntry from "./components/CreateJournalEntry.jsx";
 import Login from "./components/Login";
+import Motivation from "./pages/Motivation.jsx";
+import "./App.css";
 
 function App() {
   return (
@@ -11,6 +13,9 @@ function App() {
         <ul>
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/motivation">Motivation</Link>
           </li>
           <li>
             <Link to="/journals">Journals</Link>
@@ -29,6 +34,7 @@ function App() {
         <Route path="/journals" element={<JournalEntries />} />
         <Route path="/create" element={<CreateJournalEntry />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/motivation" element={<Motivation />} />
       </Routes>
     </Router>
   );
