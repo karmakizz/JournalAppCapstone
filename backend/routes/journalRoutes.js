@@ -1,6 +1,7 @@
 import express from 'express';
 import Journal from '../models/JournalEntry.js'; // Import your model
 
+
 const router = express.Router();
 
 // Create a new journal entry
@@ -33,4 +34,16 @@ router.get('/journals', async (req, res) => {
     res.status(500).json({ message: 'Error fetching journal entries', error: err });
   }
 });
+
+// Delete a journal entry
+router.delete('/journals/:id', async (req, res) => {
+  try {
+      const { id } = req.params;
+      await Journal.findByIdAndDelete(id);
+      res.status(200).json({ message: "Journal entry deleted successfully" });
+  } catch (error) {
+      res.status(500).json({ error: "Error deleting journal entry" });
+  }
+});
+
 export default router;
