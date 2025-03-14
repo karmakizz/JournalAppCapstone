@@ -7,6 +7,7 @@ import CreateJournalEntry from "./components/CreateJournalEntry.jsx";
 import Login from "./components/Login";
 import Motivation from "./pages/Motivation.jsx";
 import "./App.css";
+import Breathing from "./pages/BreathingExcercise.jsx";
 
 function App() {
   const [journals, setJournals] = useState([]);
@@ -16,11 +17,12 @@ function App() {
   }, []);
 
   const fetchJournals = () => {
-    axios.get('http://localhost:7777/api/journals')
-      .then(response => setJournals(response.data))
-      .catch(error => console.error("Error fetching journals:", error));
+    axios
+      .get("http://localhost:7777/api/journals")
+      .then((response) => setJournals(response.data))
+      .catch((error) => console.error("Error fetching journals:", error));
   };
-  
+
   return (
     <Router>
       <nav className="nav">
@@ -40,15 +42,25 @@ function App() {
           <li>
             <Link to="/login">Login</Link>
           </li>
+          <li>
+            <Link to="/breathing">Breathing</Link>
+          </li>
         </ul>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/journals" element={<JournalEntries journals={journals} />} />
-        <Route path="/create" element={<CreateJournalEntry onJournalCreated={fetchJournals} />} />
+        <Route
+          path="/journals"
+          element={<JournalEntries journals={journals} />}
+        />
+        <Route
+          path="/create"
+          element={<CreateJournalEntry onJournalCreated={fetchJournals} />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/motivation" element={<Motivation />} />
+        <Route path="/breathing" element={<Breathing />} />
       </Routes>
     </Router>
   );
