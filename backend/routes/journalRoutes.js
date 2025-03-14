@@ -5,29 +5,24 @@ const router = express.Router();
 
 // Create a new journal entry
 router.post('/journals', async (req, res) => {
-    const { userId, title, content, mood, visibility } = req.body;
-  
-    try {
-      // Log the received data to check if everything is correct
-      console.log("Received data:", { userId, title, content, mood, visibility });
-  
-      const newJournal = new Journal({
-        userId,
-        title,
-        content,
-        mood,
-        visibility,
-      });
-  
-      await newJournal.save();
-      res.status(201).json(newJournal);  // Return the newly created journal entry
-    } catch (err) {
-      console.error("Error creating journal entry:", err);  // Log detailed error
-      res.status(500).json({ message: 'Error creating journal entry', error: err });
-    }
-  });
-  
+  try {
+    //console.log("Received data:", req.body);  // Debugging line
 
+    const { title, content, mood, visibility, userId } = req.body;
+
+    if (!title || !content) {
+      return res.status(400).json({ error: "Title and content are required" });
+    }
+
+    const newJournal = new Journal({ title, content, mood, visibility, userId: userId || null });
+    await newJournal.save();
+
+    res.status(201).json(newJournal);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 // Fetch all journal entries
 router.get('/journals', async (req, res) => {
   try {

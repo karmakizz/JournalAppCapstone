@@ -9,17 +9,19 @@ function CreateJournal({ onJournalCreated }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const journalData = { title, content, mood, visibility, userId: "someUserId" };  // Replace "someUserId" with the actual user ID
+
+    const journalData = { title, content, mood, visibility };  
 
     axios.post('http://localhost:7777/api/journals', journalData)
       .then((response) => {
         console.log("Journal created:", response.data);
-        onJournalCreated();  // Call the function to refresh the list of journals
+        if (onJournalCreated) onJournalCreated();
       })
       .catch((error) => {
         console.error("There was an error creating the journal!", error);
       });
   };
+
 
   return (
     <form onSubmit={handleSubmit}>
