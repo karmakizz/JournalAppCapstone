@@ -1,0 +1,81 @@
+/* MotivationalQuotes.css */
+
+.motivation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    background-image: url("https://images.pexels.com/photos/3727253/pexels-photo-3727253.jpeg?auto=compress&cs=tinysrgb&w=800"); /* Use your own background image */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: #333;
+  }
+  
+  .quote-box {
+    background: rgba(0, 0, 0, 0.7); /* Dark background for better readability */
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .quote-box:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  .quote-text {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .quote-author {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .refresh-button {
+    background-color: #8bb4ca;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .refresh-button:hover {
+    background-color:#aad1e5 ;
+  }
+  
+  .refresh-button:active {
+    transform: scale(0.95); /* Button press effect */
+  }
+  
+  @media (max-width: 768px) {
+    .quote-box {
+      padding: 20px;
+    }
+  
+    .quote-text {
+      font-size: 1.5rem;
+    }
+  
+    .quote-author {
+      font-size: 2rem;
+    }
+  
+    .refresh-button {
+      font-size: 0.9rem;
+    }
+  }
+  

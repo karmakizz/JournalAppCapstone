@@ -1,28 +1,29 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../css/Navbar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faHeartbeat, faBook, faPen, faUser, faWind } from '@fortawesome/free-solid-svg-icons';
+
 function Navbar() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle("dark-mode", darkMode);
+  };
+
   return (
-    <nav className="nav">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/motivation">Motivational Quote</Link>
-        </li>
-        <li>
-          <Link to="/journals">Journal Entries</Link>
-        </li>
-        <li>
-          <Link to="/create">Create a Journal Entry</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/breathing">Breathing Excercise</Link>
-        </li>
-      </ul>
-    </nav>
+    <div className={`sidebar ${darkMode ? "dark-mode" : ""}`}>
+      <div className="toggle-btn" onClick={toggleDarkMode}>
+        {darkMode ? "🌙" : "🌞"}
+      </div>
+      <Link to="/login" className="icon"><FontAwesomeIcon icon={faUser} /><span className="icon-label">Login</span></Link>
+      <Link to="/" className="icon"><FontAwesomeIcon icon={faHome} /><span className="icon-label">Home</span></Link>
+      <Link to="/motivation" className="icon"><FontAwesomeIcon icon={faHeartbeat} /><span className="icon-label">Quote of the day</span></Link>
+      <Link to="/journals" className="icon"><FontAwesomeIcon icon={faBook} /><span className="icon-label">Journal Entries</span></Link>
+      <Link to="/create" className="icon"><FontAwesomeIcon icon={faPen} /><span className="icon-label">Create a new entry</span></Link>
+      <Link to="/breathing" className="icon"><FontAwesomeIcon icon={faWind} /><span className="icon-label">Breathing Excercise</span></Link>
+    </div>
   );
 }
 

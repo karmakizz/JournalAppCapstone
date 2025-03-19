@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../css/CreateAnEntry.css';
 
 function CreateJournal({ onJournalCreated }) {
   const [title, setTitle] = useState('');
@@ -24,19 +25,20 @@ function CreateJournal({ onJournalCreated }) {
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Create New Journal Entry</h2>
-      <label>
+    <div className="journal-container">
+    <form onSubmit={handleSubmit} className="journal-form">
+      <h2 className="journal-title">Create New Journal Entry</h2>
+      <label className="journal-label">
         Title:
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required className="journal-input"/>
       </label>
-      <label>
+      <label className="journal-label">
         Content:
-        <textarea value={content} onChange={(e) => setContent(e.target.value)} required />
+        <textarea value={content} onChange={(e) => setContent(e.target.value)} required className="journal-textarea"/>
       </label>
-      <label>
+      <label className="journal-label">
         Mood:
-        <select value={mood} onChange={(e) => setMood(e.target.value)} required>
+        <select value={mood} onChange={(e) => setMood(e.target.value)} required className="journal-select">
           <option value="Happy">Happy</option>
           <option value="Sad">Sad</option>
           <option value="Anxious">Anxious</option>
@@ -44,15 +46,16 @@ function CreateJournal({ onJournalCreated }) {
           <option value="Excited">Excited</option>
         </select>
       </label>
-      <label>
+      <label className="journal-label">
         Visibility:
-        <select value={visibility} onChange={(e) => setVisibility(e.target.value)} required>
+        <select value={visibility} onChange={(e) => setVisibility(e.target.value)} required className="journal-select">
           <option value="private">Private</option>
           <option value="public">Public</option>
         </select>
       </label>
-      <button type="submit">Create Journal</button>
+      <button type="submit" className="journal-button">Create Journal</button>
     </form>
+    </div>
   );
 }
 

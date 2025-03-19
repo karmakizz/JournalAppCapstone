@@ -1,0 +1,136 @@
+/* General Container Styling */
+.journal-container, 
+.create-journal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full height */
+    padding: 20px;
+    background-color: #f4f4f9; /* Light gray for a clean look */
+    transition: background-color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode .journal-container,
+body.dark-mode .create-journal-container {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Form Styling */
+.journal-form, 
+.create-journal-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Smooth shadow */
+    max-width: 480px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Dark Mode - Form */
+body.dark-mode .journal-form, 
+body.dark-mode .create-journal-form {
+    background: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Form Title */
+.journal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Dark Mode - Title */
+body.dark-mode .journal-title {
+    color: #d4d4d4;
+}
+
+/* Labels */
+.journal-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Dark Mode - Labels */
+body.dark-mode .journal-label {
+    color: #ddd;
+}
+
+/* Input, Textarea, Select */
+.journal-input, 
+.journal-textarea, 
+.journal-select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+    color: #333;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+/* Dark Mode - Inputs */
+body.dark-mode .journal-input, 
+body.dark-mode .journal-textarea, 
+body.dark-mode .journal-select {
+    background-color: #2a2a2a;
+    color: #f4f4f9;
+    border: 1px solid #444;
+}
+
+/* Focus Effect */
+.journal-input:focus, 
+.journal-textarea:focus, 
+.journal-select:focus {
+    border-color: #8bb4ca;
+    outline: none;
+}
+
+/* Textarea - Ensures Comfort */
+.journal-textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+/* Submit Button */
+.journal-button {
+    background: #8bb4ca;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+/* Button Hover */
+.journal-button:hover {
+    background: #6a9db9;
+    transform: scale(1.05);
+}
+
+/* Dark Mode - Button */
+body.dark-mode .journal-button {
+    background-color: #aad1e5;
+    color: #1e1e1e;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .journal-form, 
+    .create-journal-form {
+        width: 100%;
+        padding: 20px;
+    }
+}

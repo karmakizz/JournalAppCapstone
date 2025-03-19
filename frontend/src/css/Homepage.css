@@ -1,0 +1,94 @@
+/* Import a calming font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background: url('https://images.pexels.com/photos/4203102/pexels-photo-4203102.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load') no-repeat center bottom;
+  background-size: cover; /* Ensures the image covers the entire area */
+  color: #f4f4f9;
+  font-family: 'Merriweather', serif;
+  padding: 20px;
+}
+
+/* Dark mode support */
+body.dark-mode .homepage {
+  background: url('https://images.pexels.com/photos/4203102/pexels-photo-4203102.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load') no-repeat center bottom;
+  background-size: cover;
+}
+
+/* Welcome Text */
+.welcome-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #a7c1ea;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+    color: #dcdcdc;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Navigation Links */
+.nav-links ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links .nav-link {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f4f4f9;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.nav-links .nav-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Logout Button */
+.zen-button.logout-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f4f4f9;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.zen-button.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+    .welcome-section p {
+        font-size: 1rem;
+    }
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

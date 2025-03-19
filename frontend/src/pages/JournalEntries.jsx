@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import CreateJournal from '../components/CreateJournalEntry';  // Import the new form component
+import '../css/JournalEntries.css';
 
 function JournalEntries() {
   const [journals, setJournals] = useState([]);
@@ -26,32 +26,35 @@ function JournalEntries() {
         .catch(error => console.error("Error deleting journal:", error));
 };
 
-const handleJournalCreated = () => {
-  fetchJournals();  // Fetch updated list of journals after a new one is created
-};
 
+return (
+  <div className="journal-container">
+    <h1 className="journal-title">Journal entries</h1>
 
-  return (
-    <div>
-      <h1>Journal Entries</h1>
-      <CreateJournal onJournalCreated={handleJournalCreated} />  {/* Add the CreateJournal form */}
-      <ul>
-        {journals.length === 0 ? (
-          <p>No journals available</p>
-        ) : (
-          journals.map((journal) => (
-            <li key={journal._id}>
-              <h2>{journal.title}</h2>
-              <p>{journal.content}</p>
-              <p><strong>Mood:</strong> {journal.mood}</p>
-              <p><strong>Visibility:</strong> {journal.visibility}</p>
-              <button onClick={() => handleDelete(journal._id)}>Delete</button>
-            </li>
-          ))
-        )}
-      </ul>
-    </div>
-  );
+    {journals.length === 0 ? (
+      <p className="no-entries">No journal entries yet. Start writing!</p>
+    ) : (
+      <div className="journal-feed">
+        {journals.map((journal) => (
+          <article key={journal._id} className="journal-post">
+            <h2 className="post-title">{journal.title}</h2>
+            <p className="post-author">✍️ By {journal.creator?.username || "Anonymous"}</p>
+            <p className="post-date">📅 {new Date(journal.createdAt).toDateString()}</p>
+            <p className="post-content">
+              {journal.content.length > 200 ? `${journal.content.substring(0, 200)}...` : journal.content}
+            </p>
+            <p className="post-mood">Mood: {journal.mood}</p>
+            <p className="post-visibility">Visibility: {journal.visibility}</p>
+            <div className="post-actions">
+              <button className="read-more">Read More</button>
+              <button className="delete-post" onClick={() => handleDelete(journal._id)}>Delete</button>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+);
 }
 
 export default JournalEntries;

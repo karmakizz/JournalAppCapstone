@@ -1,0 +1,164 @@
+/* Set default colors for light mode */
+:root {
+    --sidebar-bg-light: #f1f1f1; /* Light background */
+    --sidebar-bg-dark: #333333; /* Dark background */
+    --text-light: #333333; /* Light text */
+    --text-dark: #f1f1f1; /* Dark text */
+    --hover-color: #8bb4ca; /* Hover effect color */
+  }
+  
+  /* Body background */
+  body {
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+    padding-left: 60px; /* Add padding to the left to prevent content from being hidden under the sidebar */
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 60px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg-light);
+    color: var(--text-light);
+    transition: width 0.3s, background-color 0.3s;
+    z-index: 1000;
+    padding-top: 20px; /* Added padding for spacing at the top */
+  }
+  
+  /* When sidebar is hovered */
+  .sidebar:hover {
+    width: 200px;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    padding: 15px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+  }
+  
+  /* Sidebar icons */
+  .sidebar .icon {
+    display: block;
+    margin: 0;
+    padding: 20px 15px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar .icon:hover {
+    color: var(--hover-color);
+  }
+  .sidebar:hover + .main-content {
+    margin-left: 200px; /* Adjust content when sidebar expands */
+  }
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #121212;
+  }
+  body.dark-mode .main-content {
+    margin-left: 60px;
+  }
+  body.dark-mode .sidebar {
+    background-color: var(--sidebar-bg-dark);
+  }
+  
+  body.dark-mode .sidebar a {
+    color: var(--text-dark);
+  }
+  
+  body.dark-mode .sidebar a:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+  }
+  
+  body.dark-mode .sidebar .icon {
+    color: var(--text-dark);
+  }
+  
+  /* Sidebar Toggle Button */
+  .toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-btn:hover {
+    background-color: var(--hover-color);
+  }
+ /* Style the icons and menu items */
+.menu__item {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .icon {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .icon-label {
+    display: none; /* Initially hide the label */
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Show the label when hovering over the icon */
+  .icon:hover .icon-label {
+    display: block;
+    opacity: 1;
+  }
+  .main-content {
+    margin-left: 60px; /* To avoid content from being hidden by the sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 50px; /* Adjust sidebar width for smaller screens */
+    }
+  
+    .sidebar:hover {
+      width: 150px; /* Adjust for mobile view */
+    }
+  
+    .main-content {
+      margin-left: 50px;
+    }
+  
+    .sidebar a {
+      font-size: 14px;
+    }
+  }

@@ -1,0 +1,144 @@
+.journal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f9;
+  background-image: url("https://images.pexels.com/photos/3727253/pexels-photo-3727253.jpeg?auto=compress&cs=tinysrgb&w=800");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 20px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.journal-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.no-entries {
+  font-size: 1.5rem;
+  color: #fff;
+  font-style: italic;
+}
+
+.journal-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.journal-post {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journal-post:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.post-author,
+.post-date {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.post-content {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.post-mood,
+.post-visibility {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.read-more,
+.delete-post {
+  background-color: #8bb4ca;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read-more:hover,
+.delete-post:hover {
+  background-color: #aad1e5;
+}
+
+.read-more:active,
+.delete-post:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .journal-title {
+    font-size: 1.5rem;
+  }
+
+  .journal-post {
+    padding: 15px;
+  }
+
+  .post-title {
+    font-size: 1.2rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+
+  .read-more,
+  .delete-post {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+.journal-container {
+  color: #f4f4f9; /* Light text for readability */
+  background-color: #1e1e1e; /* Match dark mode background */
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.journal-title {
+  color: #fff; /* Ensure the title stands out */
+}
+
+.post-title, .post-author, .post-date, .post-content, .post-mood, .post-visibility {
+  color: #e0e0e0; /* Softer white for a natural dark mode look */
+}
+body.dark-mode .journal-container,
+body.dark-mode .create-journal-container {
+    background-color: #121212;
+    color: #ffffff;
+}
