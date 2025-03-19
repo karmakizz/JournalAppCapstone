@@ -1,0 +1,156 @@
+/* Vision Board Container */
+.vision-board-container {
+    background-color: #f9fafb;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Vision Board Items */
+  .vision-board-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover Effect for Vision Items */
+  .vision-board-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Vision Item Text Area */
+  .vision-note {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Focus Effect for Vision Item Notes */
+  .vision-note:focus {
+    border-color: #8bb4ca;
+    outline: none;
+  }
+  
+  /* Image Upload Area */
+  .image-upload input {
+    padding: 10px;
+    width: 100%;
+    background-color: #f4f4f9;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Vision Item Image */
+  .vision-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  /* Vision Item Text (No Image) */
+  .vision-note-text {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* Add Item Section */
+  .add-item {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Input for Add Item Section */
+  .add-item input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 220px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Focus Effect for Add Item Input */
+  .add-item input:focus {
+    border-color: #8bb4ca;
+    outline: none;
+  }
+  
+  /* Add Item Button */
+  .add-item button {
+    padding: 12px 20px;
+    background-color: #8bb4ca;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover Effect for Add Item Button */
+  .add-item button:hover {
+    background-color: #aad1e5;
+    transform: scale(1.05);
+  }
+  
+  /* Vision Board Flex Layout */
+  .vision-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  /* Small Adjustments for Responsiveness */
+  @media (max-width: 768px) {
+    .vision-board-container {
+      padding: 15px;
+    }
+    
+    .vision-board-item {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+    
+    .add-item input {
+      width: 100%;
+      max-width: 250px;
+    }
+  
+    .add-item button {
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+  

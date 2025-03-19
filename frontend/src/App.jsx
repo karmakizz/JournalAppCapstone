@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Motivation from "./pages/Motivation.jsx";
 import Breathing from "./pages/BreathingExcercise.jsx";
 import Navbar from "./components/Navbar.jsx";
+import VisionBoard from "./pages/VisionBoard.jsx";
 import "./App.css";
 
 
@@ -60,6 +61,7 @@ function App() {
         <Route path="/create" element={<CreateJournalEntry onJournalCreated={fetchJournals} />} />
         <Route path="/motivation" element={<Motivation />} />
         <Route path="/breathing" element={<Breathing />} />
+        <Route path="/vision" element={<VisionBoard />} />
       </Routes>
     </Router>
   );
