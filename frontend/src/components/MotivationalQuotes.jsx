@@ -8,7 +8,7 @@ const MotivationalQuotes = () => {
 
   const fetchQuote = async () => {
     try {
-      const response = await axios.get('http://localhost:7777/api/quote');  // Call your backend
+      const response = await axios.get('https://journalapp-ab7i.onrender.com/api/quote');  // Call your backend
       const quoteData = response.data[0];  // ZenQuotes returns an array
       setQuote(quoteData.q);
       setAuthor(quoteData.a);

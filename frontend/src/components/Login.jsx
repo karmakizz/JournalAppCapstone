@@ -18,7 +18,7 @@ function Login({ onLogin }) {
 
     console.log("Sending login request with:", { username, password });
 
-    axios.post('http://localhost:7777/api/login', { username, password })
+    axios.post('https://journalapp-ab7i.onrender.com/api/login', { username, password })
       .then((response) => {
         console.log('User logged in:', response.data);
         onLogin(username);

@@ -11,7 +11,7 @@ const VisionBoard = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:7777/api/visionboard');
+          const response = await axios.get('https://journalapp-ab7i.onrender.com/api/visionboard');
           console.log('Fetched items:', response.data);
           setItems(response.data);  // Assuming setItems is your state updater
         } catch (error) {
@@ -31,7 +31,7 @@ const VisionBoard = () => {
       };
 
       axios
-        .post('http://localhost:7777/api/visionboard', newItem, {
+        .post('https://journalapp-ab7i.onrender.com/api/visionboard', newItem, {
           headers: { 'Content-Type': 'application/json' },
         })
         .then((response) => {

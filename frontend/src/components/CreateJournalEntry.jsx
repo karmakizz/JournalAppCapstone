@@ -13,7 +13,7 @@ function CreateJournal({ onJournalCreated }) {
 
     const journalData = { title, content, mood, visibility };  
 
-    axios.post('http://localhost:7777/api/journals', journalData)
+    axios.post('https://journalapp-ab7i.onrender.com/api/journals', journalData)
       .then((response) => {
         console.log("Journal created:", response.data);
         if (onJournalCreated) onJournalCreated();

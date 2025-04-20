@@ -23,7 +23,7 @@ function App() {
   }, [user]);
   const fetchJournals = () => {
     axios
-      .get("http://localhost:7777/api/journals")
+      .get("https://journalapp-ab7i.onrender.com/api/journals")
       .then((response) => setJournals(response.data))
       .catch((error) => console.error("Error fetching journals:", error));
   };

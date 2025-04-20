@@ -24,7 +24,7 @@ const VisionBoardItem = ({ id, content, onUpdate }) => {
     formData.append("image", file);
   
     try {
-      const response = await axios.post("http://localhost:7777/api/visionboard/upload", formData, {
+      const response = await axios.post("https://journalapp-ab7i.onrender.com/api/visionboard/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
   
@@ -33,7 +33,7 @@ const VisionBoardItem = ({ id, content, onUpdate }) => {
   
       // ✅ Save the updated vision board item
       const updatedItem = { ...content, image: imagePath };
-      await axios.put(`http://localhost:7777/api/visionboard/${updatedItem._id}`, updatedItem);
+      await axios.put(`https://journalapp-ab7i.onrender.com/api/visionboard/${updatedItem._id}`, updatedItem);
       onUpdate(updatedItem._id, updatedItem);
     } catch (error) {
       console.error("Error uploading image:", error);
@@ -50,7 +50,7 @@ const VisionBoardItem = ({ id, content, onUpdate }) => {
     const updatedData = { text: note, image, position, size };
   
     axios
-      .put(`http://localhost:7777/api/visionboard/${id}`, updatedData, {
+      .put(`https://journalapp-ab7i.onrender.com/api/visionboard/${id}`, updatedData, {
         headers: { 'Content-Type': 'application/json' },
       })
       .then((response) => {

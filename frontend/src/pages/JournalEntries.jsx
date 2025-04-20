@@ -9,7 +9,7 @@ function JournalEntries() {
     fetchJournals();  // Fetch journals when the component mounts
   }, []);
   const fetchJournals = () => {
-    axios.get('http://localhost:7777/api/journals')
+    axios.get('https://journalapp-ab7i.onrender.com/api/journals')
       .then((response) => {
         setJournals(response.data);  // Update the state with the fetched journals
       })
@@ -19,7 +19,7 @@ function JournalEntries() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:7777/api/journals/${id}`)
+    axios.delete(`https://journalapp-ab7i.onrender.com/api/journals/${id}`)
         .then(() => {
             setJournals(journals.filter(journal => journal._id !== id));  // Update state
         })
